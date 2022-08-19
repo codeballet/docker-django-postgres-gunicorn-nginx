@@ -8,8 +8,9 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# update package manager
-RUN apt-get update -y
+# update package manager and install packages
+RUN apt-get update -y \
+    && apt-get install -y netcat
 
 # install dependencies
 RUN pip install --upgrade pip
@@ -25,4 +26,4 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 COPY . .
 
 # run entrypoint.sh
-ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
