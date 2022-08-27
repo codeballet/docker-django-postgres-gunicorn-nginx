@@ -176,3 +176,6 @@ cython_debug/
 # Environment variables
 .env.prod
 .env.prod.db
+
+# Media files
+mediafiles/
