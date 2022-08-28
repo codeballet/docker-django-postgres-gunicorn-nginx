@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 
+
 # Create your views here.
 def image_upload(request):
     if request.method == "POST" and request.FILES["image_file"]:
